@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>My MC Launcher — Download</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #18181b;
+    --panel: #202024;
+    --panel-alt: #27272b;
+    --accent: #1bd96a;
+    --accent-hover: #17c25e;
+    --accent-dim: rgba(27, 217, 106, 0.12);
+    --text: #f4f4f5;
+    --muted: #9a9aa1;
+    --border: #303034;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 48px;
+    border-bottom: 1px solid var(--border);
+  }
+  .brand { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 16px; }
+  .brand-mark {
+    width: 30px; height: 30px; border-radius: 9px;
+    background: var(--accent); color: #0e1512;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 800; font-size: 14px;
+  }
+  nav a { color: var(--muted); text-decoration: none; font-size: 14px; margin-left: 28px; }
+  nav a:hover { color: var(--text); }
+
+  .hero {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 110px 24px 60px;
+    text-align: center;
+  }
+  .eyebrow {
+    display: inline-block;
+    color: var(--accent);
+    background: var(--accent-dim);
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin-bottom: 22px;
+  }
+  h1 {
+    font-size: 52px;
+    font-weight: 900;
+    letter-spacing: -0.03em;
+    line-height: 1.08;
+  }
+  h1 span { color: var(--accent); }
+  .lede {
+    color: var(--muted);
+    font-size: 18px;
+    margin: 20px auto 0;
+    max-width: 480px;
+    line-height: 1.55;
+  }
+
+  .os-tabs {
+    display: inline-flex;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 4px;
+    margin: 36px 0 18px;
+    gap: 2px;
+  }
+  .os-tab {
+    padding: 8px 18px;
+    border-radius: 7px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--muted);
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    font-family: inherit;
+  }
+  .os-tab.active { background: var(--panel-alt); color: var(--text); }
+
+  .download-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--accent);
+    color: #0e1512;
+    font-weight: 800;
+    font-size: 16px;
+    padding: 16px 32px;
+    border-radius: 12px;
+    text-decoration: none;
+    box-shadow: 0 8px 30px -10px rgba(27, 217, 106, 0.5);
+  }
+  .download-btn:hover { background: var(--accent-hover); }
+  .version-note { margin-top: 14px; color: var(--muted); font-size: 13px; }
+  .version-note code {
+    background: var(--panel-alt);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 12px;
+  }
+
+  .features {
+    max-width: 920px;
+    margin: 40px auto 0;
+    padding: 0 24px 100px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
+  .feature-card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 24px;
+    text-align: left;
+  }
+  .feature-icon {
+    width: 38px; height: 38px;
+    border-radius: 10px;
+    background: var(--accent-dim);
+    color: var(--accent);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 14px;
+  }
+  .feature-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+  .feature-card p { color: var(--muted); font-size: 13px; line-height: 1.5; }
+
+  @media (max-width: 720px) {
+    h1 { font-size: 36px; }
+    .features { grid-template-columns: 1fr; }
+    header { padding: 16px 20px; }
+  }
+</style>
+</head>
+<body>
+
+  <header>
+    <div class="brand">
+      <div class="brand-mark">M</div>
+      My MC Launcher
+    </div>
+    <nav>
+      <a href="#download">Download</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <span class="eyebrow">Free &amp; Open Source</span>
+    <h1>Play Minecraft <span>your way</span></h1>
+    <p class="lede">
+      A fast, modern launcher with real Microsoft login and one-click
+      Fabric and Forge support. No accounts, no ads, no nonsense.
+    </p>
+
+    <div class="os-tabs" role="tablist" aria-label="Choose your operating system">
+      <button class="os-tab active" data-os="windows">Windows</button>
+      <button class="os-tab" data-os="mac">macOS</button>
+      <button class="os-tab" data-os="linux">Linux</button>
+    </div>
+    <br />
+
+    <a id="download" class="download-btn" href="#" download>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 3v12m0 0 5-5m-5 5-5-5M5 21h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span id="download-label">Download for Windows</span>
+    </a>
+    <div class="version-note">
+      v0.1.0 &middot; replace this button's link with your built installer, e.g. <code>My-MC-Launcher-Setup-0.1.0.exe</code>
+    </div>
+
+    <div class="features">
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Fast &amp; lightweight</h3>
+        <p>Downloads only what the selected version needs, straight from Mojang's own servers.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 7h16M4 12h16M4 17h10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Fabric &amp; Forge</h3>
+        <p>Pick a mod loader and version from a dropdown — installation happens automatically.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="1.8"/><path d="M4 21c0-4 3.5-7 8-7s8 3 8 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Real Microsoft login</h3>
+        <p>Sign in with your actual Minecraft account, the same login flow the official launcher uses.</p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const tabs = document.querySelectorAll('.os-tab');
+    const label = document.getElementById('download-label');
+    const downloadBtn = document.getElementById('download');
+
+    // Fill in the real file paths once you've built installers for each OS.
+    const LINKS = {
+      windows: { file: '#', label: 'Download for Windows' },
+      mac:     { file: '#', label: 'Download for macOS' },
+      linux:   { file: '#', label: 'Download for Linux' }
+    };
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        const os = tab.dataset.os;
+        label.textContent = LINKS[os].label;
+        downloadBtn.href = LINKS[os].file;
+      });
+    });
+
+    // Auto-select tab based on visitor's OS
+    const ua = navigator.userAgent;
+    let detected = 'windows';
+    if (ua.includes('Mac')) detected = 'mac';
+    else if (ua.includes('Linux')) detected = 'linux';
+    document.querySelector(`.os-tab[data-os="${detected}"]`).click();
+  </script>
+
+</body>
+</html>
